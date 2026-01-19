@@ -1,0 +1,1048 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-size: 14px;
+  
+  /* Light Theme - Clean, bright, soft shadows */
+  --background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,1) 100%);
+  --background-solid: #ffffff;
+  --background-pattern: radial-gradient(circle at 25% 25%, rgba(99,102,241,0.03) 0%, transparent 50%), 
+                      radial-gradient(circle at 75% 75%, rgba(139,92,246,0.03) 0%, transparent 50%);
+  --foreground: #0f172a;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(148, 163, 184, 0.15);
+  --card-foreground: #0f172a;
+  --popover: rgba(255, 255, 255, 0.95);
+  --popover-foreground: #0f172a;
+  --primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --primary-solid: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(241, 245, 249, 0.9);
+  --secondary-foreground: #334155;
+  --muted: rgba(248, 250, 252, 0.8);
+  --muted-foreground: #64748b;
+  --accent: rgba(226, 232, 240, 0.9);
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(148, 163, 184, 0.2);
+  --input: rgba(248, 250, 252, 0.9);
+  --input-background: rgba(255, 255, 255, 0.9);
+  --ring: #6366f1;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --radius: 12px;
+  
+  /* Enhanced Animation variables */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  
+  /* Post type colors for Light theme */
+  --post-ask: #3b82f6;
+  --post-help: #10b981;
+  --post-poll: #f59e0b;
+  --post-looking: #8b5cf6;
+  --post-discussion: #6366f1;
+  --post-collab: #ef4444;
+}
+
+/* Windows 1992 Theme - Retro OS / Win95-inspired UI */
+.windows1992 {
+  --background: #c0c0c0;
+  --background-solid: #c0c0c0;
+  --background-pattern: none;
+  --foreground: #000000;
+  --card: #c0c0c0;
+  --card-border: #808080;
+  --card-foreground: #000000;
+  --popover: #c0c0c0;
+  --popover-foreground: #000000;
+  --primary: #000080;
+  --primary-solid: #000080;
+  --primary-foreground: #ffffff;
+  --secondary: #c0c0c0;
+  --secondary-foreground: #000000;
+  --muted: #808080;
+  --muted-foreground: #404040;
+  --accent: #000080;
+  --accent-foreground: #ffffff;
+  --destructive: #800000;
+  --destructive-foreground: #ffffff;
+  --border: #808080;
+  --input: #ffffff;
+  --input-background: #ffffff;
+  --ring: #000080;
+  --glass-bg: #c0c0c0;
+  --glass-border: #808080;
+  --shadow-soft: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+  --shadow-medium: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #808080;
+  --shadow-large: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #404040;
+  --shadow-glow: none;
+  --shadow-xl: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #404040;
+  --shadow-inset: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+  --shadow-outset: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+  --radius: 0px;
+  
+  /* Post type colors for Windows 1992 theme */
+  --post-ask: #000080;
+  --post-help: #008000;
+  --post-poll: #800080;
+  --post-looking: #800000;
+  --post-discussion: #000080;
+  --post-collab: #800000;
+  
+  font-family: 'MS Sans Serif', sans-serif !important;
+  cursor: default;
+}
+
+/* Cyber Neon Theme */
+.cyber {
+  --background: linear-gradient(135deg, rgba(6,7,20,0.98) 0%, rgba(13,11,26,0.95) 100%);
+  --background-solid: #060714;
+  --background-pattern: radial-gradient(circle at 25% 25%, rgba(0,255,255,0.08) 0%, transparent 50%), 
+                      radial-gradient(circle at 75% 75%, rgba(255,0,255,0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 50% 50%, rgba(57,255,20,0.05) 0%, transparent 70%);
+  --foreground: #00ffff;
+  --card: rgba(13, 11, 26, 0.7);
+  --card-border: rgba(0, 255, 255, 0.3);
+  --card-foreground: #00ffff;
+  --popover: rgba(13, 11, 26, 0.95);
+  --popover-foreground: #00ffff;
+  --primary: linear-gradient(135deg, #00ffff 0%, #ff00ff 100%);
+  --primary-solid: #00ffff;
+  --primary-foreground: #060714;
+  --secondary: rgba(20, 17, 35, 0.8);
+  --secondary-foreground: #39ff14;
+  --muted: rgba(20, 17, 35, 0.7);
+  --muted-foreground: #8892b0;
+  --accent: rgba(33, 25, 50, 0.8);
+  --accent-foreground: #00ffff;
+  --destructive: #ff0080;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 255, 255, 0.2);
+  --input: rgba(20, 17, 35, 0.9);
+  --input-background: rgba(20, 17, 35, 0.9);
+  --ring: #00ffff;
+  --glass-bg: rgba(13, 11, 26, 0.4);
+  --glass-border: rgba(0, 255, 255, 0.4);
+  --shadow-soft: 0 0 10px rgba(0, 255, 255, 0.3);
+  --shadow-medium: 0 0 20px rgba(0, 255, 255, 0.4);
+  --shadow-large: 0 0 30px rgba(0, 255, 255, 0.5);
+  --shadow-glow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(255, 0, 255, 0.4);
+  --shadow-xl: 0 0 50px rgba(0, 255, 255, 0.6), 0 0 100px rgba(255, 0, 255, 0.3);
+  --radius: 20px;
+  
+  /* Post type colors for Cyber theme */
+  --post-ask: #00ffff;
+  --post-help: #39ff14;
+  --post-poll: #ff00ff;
+  --post-looking: #ffff00;
+  --post-discussion: #0080ff;
+  --post-collab: #ff0080;
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Removed outline-ring/50 as it's better handled by focus-visible */
+    box-sizing: border-box;
+    transition: all var(--transition-fast);
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground font-normal antialiased;
+    background: var(--background);
+    background-image: var(--background-pattern);
+    transition: all var(--transition-slow);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* The rest of your CSS file with all the @layer utilities, keyframes, etc., remains here... */
+/* ... All of that code is correct and does not need to be changed. */
+
+  /* Windows 1992 theme specific body styling */
+  .windows1992 body {
+    font-family: 'MS Sans Serif', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 11px !important;
+    cursor: default;
+  }
+
+  /* Enhanced scrollbar */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--muted);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--glass-bg);
+    border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition-fast);
+  }
+  
+  .windows1992 ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .windows1992 ::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    border: inset 1px 1px 0 #808080, inset -1px -1px 0 #ffffff;
+  }
+  
+  .windows1992 ::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+    border-radius: 0;
+    backdrop-filter: none;
+  }
+  
+  .windows1992 ::-webkit-scrollbar-thumb:hover {
+    background: #d4d0c8;
+  }
+  
+  .windows1992 ::-webkit-scrollbar-button {
+    background: #c0c0c0;
+    border: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .windows1992 ::-webkit-scrollbar-button:hover {
+    background: #d4d0c8;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-solid);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Enhanced selection */
+  ::selection {
+    background: var(--primary-solid);
+    color: var(--primary-foreground);
+    text-shadow: none;
+  }
+
+  .windows1992 ::selection {
+    background: #000080;
+    color: #ffffff;
+  }
+
+  /* Enhanced focus ring */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 0 4px rgba(var(--ring), 0.1);
+  }
+  
+  /* Windows 1992 theme focus */
+  .windows1992 :focus-visible {
+    outline: 1px dotted #000000;
+    outline-offset: -1px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+
+/**
+ * Enhanced typography with theme-specific styling
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      background: var(--primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 1rem;
+      color: var(--foreground);
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      color: var(--foreground);
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+      color: var(--foreground);
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: var(--muted-foreground);
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--foreground);
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    input, textarea {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Windows 1992 theme typography overrides */
+  .windows1992 :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1, h2, h3, h4, p, label, button, input, textarea {
+      font-family: 'MS Sans Serif', sans-serif !important;
+      filter: none !important;
+      text-shadow: none !important;
+      background: none !important;
+      -webkit-background-clip: unset !important;
+      -webkit-text-fill-color: unset !important;
+      background-clip: unset !important;
+      color: var(--foreground) !important;
+      font-weight: 400 !important;
+    }
+    
+    h1 { font-size: 16px; font-weight: 700; }
+    h2 { font-size: 14px; font-weight: 700; }
+    h3 { font-size: 12px; font-weight: 700; }
+    h4 { font-size: 11px; font-weight: 700; }
+    p { font-size: 11px; }
+    label { font-size: 11px; }
+    button { font-size: 11px; }
+    input, textarea { font-size: 11px; }
+  }
+}
+
+/* Enhanced utility classes */
+@layer utilities {
+  /* Glassmorphism effects */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .windows1992 .glass {
+    background: var(--card);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 2px outset #c0c0c0;
+    box-shadow: var(--shadow-outset);
+  }
+  
+  .glass-strong {
+    background: var(--card);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--card-border);
+  }
+  
+  .windows1992 .glass-strong {
+    background: var(--card);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 2px outset #c0c0c0;
+    box-shadow: var(--shadow-outset);
+  }
+  
+  .glass-subtle {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .windows1992 .glass-subtle {
+    background: var(--muted);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px inset #c0c0c0;
+    box-shadow: var(--shadow-inset);
+  }
+
+  /* Enhanced animations */
+  .animate-in {
+    animation: slideIn var(--transition-normal) var(--spring) forwards;
+  }
+  
+  .animate-out {
+    animation: slideOut var(--transition-normal) ease-in forwards;
+  }
+  
+  .fade-in {
+    animation: fadeIn var(--transition-normal) ease-out forwards;
+  }
+  
+  .scale-in {
+    animation: scaleIn var(--transition-normal) var(--bounce) forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp var(--transition-normal) var(--spring) forwards;
+  }
+  
+  .slide-down {
+    animation: slideDown var(--transition-normal) var(--spring) forwards;
+  }
+  
+  .bounce-in {
+    animation: bounceIn var(--transition-slow) var(--elastic) forwards;
+  }
+  
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Interactive effects */
+  .hover-lift {
+    transition: all var(--transition-fast);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .windows1992 .hover-lift:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-outset);
+  }
+  
+  .hover-glow {
+    transition: all var(--transition-fast);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
+  }
+  
+  .windows1992 .hover-glow:hover {
+    box-shadow: var(--shadow-outset);
+    transform: scale(1.02);
+  }
+  
+  .press-effect:active {
+    transform: scale(0.95);
+    transition: transform 100ms ease-out;
+  }
+  
+  .windows1992 .press-effect:active {
+    box-shadow: var(--shadow-inset);
+    transform: translate(1px, 1px);
+  }
+  
+  .tilt-hover {
+    transition: transform var(--transition-fast);
+  }
+  
+  .tilt-hover:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  }
+  
+  .windows1992 .tilt-hover:hover {
+    transform: none;
+  }
+
+  /* Gamification effects */
+  .level-up {
+    animation: levelUp 1s var(--bounce) forwards;
+  }
+  
+  .badge-earn {
+    animation: badgeEarn 0.8s var(--elastic) forwards;
+  }
+  
+  .xp-gain {
+    animation: xpGain 0.6s var(--spring) forwards;
+  }
+  
+  .progress-fill {
+    animation: progressFill 1s var(--spring) forwards;
+  }
+
+  /* Theme-specific effects */
+  .cyber .glow-text {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+  
+  .windows1992 .retro-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+    font-family: 'MS Sans Serif', sans-serif;
+  }
+
+  /* Shadow utilities */
+  .shadow-glass {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-glass-lg {
+    box-shadow: var(--shadow-large);
+  }
+  
+  .shadow-neon {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Windows 1992 shadow utilities */
+  .windows1992 .shadow-glass,
+  .windows1992 .shadow-glass-lg,
+  .windows1992 .shadow-neon {
+    box-shadow: var(--shadow-outset) !important;
+  }
+  
+  .windows1992 .shadow-inset {
+    box-shadow: var(--shadow-inset) !important;
+  }
+  
+  /* Post type visual markers */
+  .post-marker {
+    position: relative;
+  }
+  
+  .post-marker::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 0 2px 2px 0;
+    transition: all var(--transition-fast);
+  }
+  
+  .windows1992 .post-marker::before {
+    border-radius: 0;
+    width: 3px;
+    border-left: 3px solid;
+  }
+  
+  .post-marker.ask::before { background: var(--post-ask); }
+  .post-marker.help::before { background: var(--post-help); }
+  .post-marker.poll::before { background: var(--post-poll); }
+  .post-marker.looking::before { background: var(--post-looking); }
+  .post-marker.discussion::before { background: var(--post-discussion); }
+  .post-marker.collab::before { background: var(--post-collab); }
+  
+  .windows1992 .post-marker.ask::before { border-left-color: var(--post-ask); }
+  .windows1992 .post-marker.help::before { border-left-color: var(--post-help); }
+  .windows1992 .post-marker.poll::before { border-left-color: var(--post-poll); }
+  .windows1992 .post-marker.looking::before { border-left-color: var(--post-looking); }
+  .windows1992 .post-marker.discussion::before { border-left-color: var(--post-discussion); }
+  .windows1992 .post-marker.collab::before { border-left-color: var(--post-collab); }
+  
+  /* Floating button */
+  .floating-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 40;
+    transition: all var(--transition-normal);
+  }
+  
+  .floating-button:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .windows1992 .floating-button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-outset);
+  }
+  
+  /* Windows 1992 specific utilities */
+  .windows1992 .window-header {
+    background: linear-gradient(90deg, #000080 0%, #000080 100%);
+    color: #ffffff;
+    padding: 2px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    border-bottom: 1px solid #808080;
+    cursor: move;
+  }
+  
+  .windows1992 .window-content {
+    background: #c0c0c0;
+    border: 2px inset #c0c0c0;
+    padding: 8px;
+  }
+  
+  .windows1992 .button-win95 {
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    padding: 2px 16px;
+    font-size: 11px;
+    font-family: 'MS Sans Serif', sans-serif;
+    min-height: 23px;
+    cursor: pointer;
+  }
+  
+  .windows1992 .button-win95:hover {
+    background: #d4d0c8;
+  }
+  
+  .windows1992 .button-win95:active {
+    border: 2px inset #c0c0c0;
+    transform: translate(1px, 1px);
+  }
+  
+  .windows1992 .input-win95 {
+    background: #ffffff;
+    border: 2px inset #c0c0c0;
+    padding: 2px 4px;
+    font-size: 11px;
+    font-family: 'MS Sans Serif', sans-serif;
+    min-height: 20px;
+  }
+  
+  .windows1992 .checkbox-win95 {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    background: #ffffff;
+    border: 2px inset #c0c0c0;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .windows1992 .checkbox-win95:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    font-size: 11px;
+    color: #000000;
+  }
+  
+  .windows1992 .radio-win95 {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    background: #ffffff;
+    border: 2px inset #c0c0c0;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .windows1992 .radio-win95:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 5px;
+    background: #000000;
+    border-radius: 50%;
+  }
+}
+
+/* Keyframe animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: var(--shadow-glow);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: var(--shadow-xl);
+    opacity: 0.8;
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes levelUp {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes badgeEarn {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes xpGain {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--progress-width, 0%); }
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 5px currentColor;
+  }
+  to {
+    text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Component-specific styles */
+.card-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.windows1992 .card-glass {
+  background: var(--card);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 2px outset #c0c0c0;
+  border-radius: 0;
+  box-shadow: var(--shadow-outset);
+}
+
+.card-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-solid), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.windows1992 .card-glass::before {
+  display: none;
+}
+
+.card-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glass-lg);
+}
+
+.windows1992 .card-glass:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-outset);
+}
+
+.card-glass:hover::before {
+  opacity: 1;
+}
+
+/* Feed-specific enhancements */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 4xl;
+  margin: 0 auto;
+}
+
+.sticky-tabs {
+  position: sticky;
+  top: 5rem;
+  z-index: 30;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  margin: -1rem -2rem 2rem -2rem;
+  padding: 1rem 2rem;
+}
+
+.windows1992 .sticky-tabs {
+  background: var(--background-solid);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 2px inset #c0c0c0;
+}
+
+.post-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.windows1992 .post-card {
+  border-radius: 0;
+  box-shadow: var(--shadow-outset);
+  border: 2px outset #c0c0c0;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.windows1992 .post-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-outset);
+}
+
+/* Theme-specific button styles */
+.windows1992 button {
+  font-family: 'MS Sans Serif', sans-serif !important;
+  border-radius: 0 !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  border: 2px outset #c0c0c0 !important;
+  background: #c0c0c0 !important;
+  color: #000000 !important;
+  padding: 2px 16px !important;
+  min-height: 23px !important;
+  cursor: default !important;
+}
+
+.windows1992 button:hover {
+  background: #d4d0c8 !important;
+}
+
+.windows1992 button:active {
+  border: 2px inset #c0c0c0 !important;
+  transform: translate(1px, 1px) !important;
+}
+
+.windows1992 input,
+.windows1992 textarea {
+  font-family: 'MS Sans Serif', sans-serif !important;
+  border-radius: 0 !important;
+  font-size: 11px !important;
+  background: #ffffff !important;
+  border: 2px inset #c0c0c0 !important;
+  color: #000000 !important;
+  padding: 2px 4px !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .floating-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .sticky-tabs {
+    margin: -1rem -1rem 1rem -1rem;
+    padding: 1rem;
+  }
+  
+  .feed-container {
+    gap: 0.75rem;
+  }
+}
+
+/* Windows 1992 cursor styles */
+.windows1992 * {
+  cursor: default !important;
+}
+
+.windows1992 button {
+  cursor: pointer !important;
+}
+
+.windows1992 input,
+.windows1992 textarea {
+  cursor: text !important;
+}
+
+.windows1992 a {
+  cursor: pointer !important;
+}
+
+/* Loading cursor animation for Windows 1992 */
+.windows1992 .loading {
+  cursor: wait !important;
+}
+
+.windows1992 .loading::after {
+  content: '⧗';
+  animation: blink 1s infinite;
+} 

@@ -1,0 +1,376 @@
+/* App Root Styles */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: all var(--transition-slow);
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Main Content Layout */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem; /* Space for navigation */
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Large screens */
+@media (min-width: 768px) {
+  .content-container {
+    max-width: 1280px;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-container {
+    padding: 0 2rem;
+  }
+}
+
+/* View Content Styling */
+.view-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  animation: slideIn var(--transition-normal) var(--spring) forwards;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.view-content.animate-in {
+  animation: slideIn var(--transition-normal) var(--spring) forwards;
+}
+
+/* Specific view styling */
+.events-view {
+  animation-delay: 50ms;
+}
+
+.campus-view {
+  animation-delay: 100ms;
+}
+
+.inter-view {
+  animation-delay: 150ms;
+}
+
+.badges-view {
+  animation-delay: 200ms;
+}
+
+/* Profile View Layout */
+.profile-view {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  animation: slideIn var(--transition-normal) var(--spring) forwards;
+}
+
+.profile-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .profile-container {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-container {
+    padding: 2rem;
+  }
+}
+
+/* Theme-specific App Root Styles */
+
+/* Light Theme */
+.app-root {
+  background: var(--background);
+  background-image: var(--background-pattern);
+  color: var(--foreground);
+}
+
+.app-root .main-content {
+  background: transparent;
+}
+
+/* Cyber Theme */
+.app-root.cyber {
+  background: var(--background);
+  background-image: var(--background-pattern);
+  color: var(--foreground);
+}
+
+.app-root.cyber .view-content {
+  text-shadow: 0 0 10px var(--primary-solid);
+}
+
+.app-root.cyber .content-container {
+  background: rgba(13, 11, 26, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  margin: 1rem auto;
+  max-width: calc(1280px - 2rem);
+}
+
+/* Windows 1992 Theme */
+.app-root.windows1992 {
+  background: var(--background-solid);
+  color: var(--foreground);
+  font-family: 'MS Sans Serif', sans-serif;
+  cursor: default;
+}
+
+.app-root.windows1992 .main-content {
+  background: var(--background-solid);
+}
+
+.app-root.windows1992 .content-container {
+  background: var(--background-solid);
+  border: 2px inset #c0c0c0;
+  margin: 1rem auto;
+  max-width: calc(1280px - 2rem);
+  box-shadow: var(--shadow-inset);
+}
+
+.app-root.windows1992 .view-content {
+  padding: 8px;
+  background: var(--background-solid);
+}
+
+.app-root.windows1992 .profile-container {
+  background: var(--background-solid);
+  border: 2px inset #c0c0c0;
+  box-shadow: var(--shadow-inset);
+  margin: 1rem auto;
+  max-width: calc(1280px - 2rem);
+}
+
+/* Loading and Transition States */
+.app-root.transitioning {
+  pointer-events: none;
+}
+
+.app-root.transitioning .view-content {
+  opacity: 0.7;
+  transform: scale(0.98);
+  transition: all var(--transition-normal);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
+
+  .profile-content {
+    padding-top: 4rem;
+  }
+
+  .content-container {
+    padding: 0 0.75rem;
+  }
+
+  .profile-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .app-root.cyber .content-container,
+  .app-root.windows1992 .content-container,
+  .app-root.windows1992 .profile-container {
+    margin: 0.5rem auto;
+    max-width: calc(100% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 3.5rem;
+  }
+
+  .profile-content {
+    padding-top: 3.5rem;
+  }
+
+  .content-container {
+    padding: 0 0.5rem;
+  }
+
+  .profile-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .app-root.cyber .content-container,
+  .app-root.windows1992 .content-container,
+  .app-root.windows1992 .profile-container {
+    margin: 0.25rem auto;
+    max-width: calc(100% - 0.5rem);
+  }
+}
+
+/* Auto Layout Utilities */
+.auto-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auto-layout-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.auto-layout-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.auto-layout-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auto-layout-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.auto-layout-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Performance Optimizations */
+.app-root {
+  will-change: background;
+  transform: translateZ(0);
+}
+
+.view-content {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.main-content {
+  contain: layout style paint;
+}
+
+/* Accessibility Enhancements */
+.app-root:focus-within {
+  outline: none;
+}
+
+.view-content:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.app-root.windows1992 .view-content:focus-within {
+  outline: 1px dotted #000000;
+  outline-offset: -1px;
+  border-radius: 0;
+}
+
+/* Reduce Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .app-root,
+  .view-content,
+  .profile-content {
+    animation: none;
+    transition: none;
+  }
+
+  .view-content {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .app-root {
+    background: var(--background-solid);
+    background-image: none;
+  }
+
+  .content-container {
+    border: 2px solid var(--border);
+  }
+
+  .view-content {
+    text-shadow: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .app-root {
+    background: white;
+    background-image: none;
+    color: black;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  .content-container {
+    max-width: none;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+}
